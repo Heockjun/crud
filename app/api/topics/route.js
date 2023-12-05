@@ -22,10 +22,10 @@ export async function DELETE(request) {
   return NextResponse.json({ message: 'Topic deleted!' }, { status: 200 })
 }
 
-// export async function PUT(request, { params }) {
-//   const { id } = params
-//   const { newTitle: title, newDescription: description } = await request.json()
-//   await connectMongoDB()
-//   await Topic.findByIdAndUpdate(id, { title, description })
-//   return NextResponse.json({ message: 'Topic updated!' }, { status: 200 })
-// }
+export async function PUT(request, { params }) {
+  const { id } = params
+  const { newTitle: title, newDescription: description } = await request.json()
+  await connectMongoDB()
+  await Topic.findByIdAndUpdate(id, { title, description })
+  return NextResponse.json({ message: 'Topic updated!' }, { status: 200 })
+}
