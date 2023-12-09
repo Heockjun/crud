@@ -30,7 +30,7 @@ export const authOptions = {
           const res1 = await fetch(`${apiUrl}/api/log`, {
             method: 'POST',
             headers: {
-              'Contyent-Type': 'application/json',
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({ email }),
           })
