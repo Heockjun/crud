@@ -24,16 +24,17 @@ export const authOptions = {
       const apiUrl = process.env.API_URL
       const { name, email } = user
 
-      if (account.provider === ' google' || account.provider === 'github') {
+      if (account.provider === 'google' || account.provider === 'github') {
         try {
           await connectMongoDB()
           const res1 = await fetch(`${apiUrl}/api/log`, {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
+              'Contyent-Type': 'application/json',
             },
             body: JSON.stringify({ email }),
           })
+
           const userExists = await User.findOne({ email })
 
           if (!userExists) {
